@@ -5,15 +5,19 @@ import lombok.Data;
 
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
-import ru.netology.domain.ProductRepository;
 import ru.netology.domain.Smartphone;
+import ru.netology.repository.ProductRepository;
+
 
 @AllArgsConstructor
 @Data
 public class ProductManager {
     private ProductRepository items;
 
-    public void addProduct(Product item) {
+    public ProductManager() {
+    }
+
+    public void add(Product item) {
         items.save(item);
     }
 
